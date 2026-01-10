@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Stylist | Personalized Outfit Suggestions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Hero Section -->
+        <header class="hero-section">
+            <div class="logo">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> AI Stylist
+            </div>
+            <h1>Elevate Your Style</h1>
+            <p>Get personalized outfit suggestions tailored to your wardrobe, the weather, and the occasion.</p>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="main-grid">
+            
+            <!-- Panel 1: Wardrobe Manager -->
+            <section class="panel wardrobe-panel">
+                <h2><i class="fa-solid fa-shirt"></i> Your Digital Wardrobe</h2>
+                
+                <div class="add-item-form">
+                    <select id="itemType">
+                        <option value="" disabled selected>Type</option>
+                        <option value="top">Top</option>
+                        <option value="bottom">Bottom</option>
+                        <option value="shoes">Shoes</option>
+                        <option value="outerwear">Outerwear</option>
+                        <option value="accessory">Accessory</option>
+                    </select>
+                    
+                    <select id="itemStyle">
+                        <option value="" disabled selected>Style</option>
+                        <option value="casual">Casual</option>
+                        <option value="formal">Formal</option>
+                        <option value="sport">Sport</option>
+                        <option value="party">Party</option>
+                    </select>
+
+                    <input type="text" id="itemColor" placeholder="Color (e.g., Navy Blue)">
+                    
+                    <button id="addItemBtn"><i class="fa-solid fa-plus"></i> Add</button>
+                </div>
+
+                <div class="wardrobe-list" id="wardrobeList">
+                    <!-- Items will be added here dynamically -->
+                    <div class="empty-state">
+                        <p>Your wardrobe is empty. Add some items to get started!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Panel 2: Context & Suggestions -->
+            <section class="panel context-panel">
+                <div class="context-controls">
+                    <h2><i class="fa-solid fa-sliders"></i> Context & Preferences</h2>
+                    
+                    <div class="control-group">
+                        <label><i class="fa-solid fa-cloud-sun"></i> Weather</label>
+                        <select id="weatherSelect">
+                            <option value="sunny">Sunny / Hot</option>
+                            <option value="mild">Mild / Pleasant</option>
+                            <option value="cold">Cold / Winter</option>
+                            <option value="rainy">Rainy</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label><i class="fa-solid fa-champagne-glasses"></i> Occasion</label>
+                        <select id="occasionSelect">
+                            <option value="casual">Casual Day Out</option>
+                            <option value="work">Work / Office</option>
+                            <option value="gym">Gym / Exercise</option>
+                            <option value="date">Date Night</option>
+                            <option value="party">Party</option>
+                        </select>
+                    </div>
+
+                    <button id="generateBtn" class="primary-btn">
+                        <i class="fa-solid fa-bolt"></i> Generate Outfit
+                    </button>
+                </div>
+
+                <div class="suggestion-area" id="suggestionArea">
+                    <h3>Your Look</h3>
+                    <div class="outfit-display" id="outfitDisplay">
+                        <div class="placeholder-suggestion">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <p>Configure your context and click "Generate" to see the magic.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
